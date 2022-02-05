@@ -176,7 +176,7 @@ app.get("/shelf/:id/book/:bookid", async (req, res) => {
 
 // operatie PUT pentru a doua entitate ca subresursa
 app.put("/shelf/:id/book/:bookid", async (req, res) => {
-    const book = await db.Book.findByPk(req.params.id);
+    const book = await db.Book.findByPk(req.params.bookid);
 
     if (!book) {
         return res.status(404).send();
